@@ -3,24 +3,56 @@ package no.hvl.dat250.jpa.tutorial.creditcards;
 import java.util.Collection;
 import jakarta.persistence.*;
 
-@Entity
+@Entity(name = "Address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String street;
+    private Integer number;
+
+    @ManyToMany(mappedBy = "addresses")
+    private Collection<Customer> owners;
+
+    public Address() {
+    }
+
+    public Address(String street, Integer number) {
+        this.street = street;
+        this.number = number;
+    }
+
+    public Address(String street, Integer number, Collection<Customer> owners) {
+        this.street = street;
+        this.number = number;
+        this.owners = owners;
+    }
+
+    public Long getId() {
+
+        return id;
+    }
 
     public String getStreet() {
-        // TODO: implement method!
-        return null;
+
+        return street;
     }
 
     public Integer getNumber() {
-        // TODO: implement method!
-        return null;
+
+        return number;
     }
 
     public Collection<Customer> getOwners() {
-        // TODO: implement method!
-        return null;
+
+        return owners;
+    }
+
+    public void setStreet(String street2) {
+        street = street2;
+    }
+
+    public void setNumber(int i) {
+        number = i;
     }
 }
