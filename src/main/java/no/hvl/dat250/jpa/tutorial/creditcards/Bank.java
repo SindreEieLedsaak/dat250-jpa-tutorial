@@ -2,6 +2,7 @@ package no.hvl.dat250.jpa.tutorial.creditcards;
 
 import jakarta.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 @Entity(name = "Bank")
 public class Bank {
@@ -11,7 +12,7 @@ public class Bank {
     private String name;
 
     @OneToMany(mappedBy = "bank")
-    private Collection<CreditCard> ownedCards;
+    private Set<CreditCard> ownedCards;
 
     public Bank() {
     }
@@ -20,7 +21,7 @@ public class Bank {
         this.name = name;
     }
 
-    public Bank(String name, Collection<CreditCard> ownedCards) {
+    public Bank(String name, Set<CreditCard> ownedCards) {
         this.name = name;
         this.ownedCards = ownedCards;
     }
@@ -30,12 +31,12 @@ public class Bank {
     }
 
     public String getName() {
-        // TODO: implement method!
+
         return name;
     }
 
-    public Collection<CreditCard> getOwnedCards() {
-        // TODO: implement method!
+    public Set<CreditCard> getOwnedCards() {
+
         return ownedCards;
     }
 }

@@ -1,6 +1,8 @@
 package no.hvl.dat250.jpa.tutorial.creditcards;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import jakarta.persistence.*;
 
@@ -14,10 +16,10 @@ public class CreditCard {
     private Integer balance;
     private Integer creditLimit;
 
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    private Collection<Customer> owners;
+    @ManyToMany(mappedBy = "creditCards")
+    private Set<Customer> owners;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Pincode pincode;
 
     @ManyToOne
@@ -29,6 +31,10 @@ public class CreditCard {
         this.creditLimit = creditLimit;
         this.pincode = pincode;
         this.bank = bank;
+    }
+
+    public CreditCard() {
+
     }
 
     public Integer getNumber() {
@@ -56,7 +62,7 @@ public class CreditCard {
         return bank;
     }
 
-    public Collection<Customer> getOwners() {
+    public Set<Customer> getOwners() {
         return owners;
     }
 

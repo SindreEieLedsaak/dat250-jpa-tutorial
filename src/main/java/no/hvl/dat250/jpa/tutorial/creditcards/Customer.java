@@ -13,7 +13,7 @@ public class Customer {
     @ManyToMany(cascade = CascadeType.PERSIST)
     private Collection<Address> addresses;
 
-    @ManyToMany(mappedBy = "owners")
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private Collection<CreditCard> creditCards;
 
     public Customer() {

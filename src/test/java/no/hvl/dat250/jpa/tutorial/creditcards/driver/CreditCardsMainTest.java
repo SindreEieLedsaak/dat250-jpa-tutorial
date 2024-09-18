@@ -42,7 +42,7 @@ public class CreditCardsMainTest {
 
         assertEquals(address.getStreet(), "Inndalsveien");
         assertEquals(address.getNumber(), 28);
-        assertEquals(new HashSet<>(address.getOwners()), Set.of(customer));
+        assertEquals(address.getOwners(), Set.of(customer));
 
         // Test credit cards
         assertEquals(customer.getCreditCards().size(), 2);
