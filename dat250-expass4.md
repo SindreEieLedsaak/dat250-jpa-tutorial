@@ -97,7 +97,7 @@ During the implementation of Experiment 2, I encountered several technical probl
 
 The complete code for Experiment 2, including the test case, is available at the following link:
 
-[Experiment 2 Code on GitHub](https://github.com/your-repo-link-here)
+[Experiment 4 Code on GitHub](https://github.com/SindreEieLedsaak/dat250-jpa-tutorial/tree/master)
 
 The included test case now passes successfully after resolving the issues mentioned above.
 
